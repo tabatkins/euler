@@ -71,3 +71,12 @@ problems.p8 = function() {
 }
 solutions.p8 = 40824;
 
+problems.p9 = function() {
+	for(var a = 1; a < 1000/2; a++) {
+		for(var b = 1; b < a; b++) {
+			var c = 1000 - a - b;
+			if(c*c == a*a + b*b) return a*b*c;
+		}
+	}
+}
+solutions.p9 = 31875000;

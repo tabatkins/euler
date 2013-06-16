@@ -80,3 +80,8 @@ problems.p9 = function() {
 	}
 }
 solutions.p9 = 31875000;
+
+problems.p10 = function() {
+	if(maxPrime < 1999993) throw "Extend the prime list to at least 2M.";
+	return primes.filter(function(x){return x < 2e6;}).reduce(op.add, 1);
+}

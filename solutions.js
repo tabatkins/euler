@@ -55,3 +55,8 @@ problems.p6 = function() {
 }
 solutions.p6 = 25164150;
 
+problems.p7 = function() {
+	return primes[10000];
+}
+solutions.p7 = 104743;
+

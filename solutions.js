@@ -44,3 +44,14 @@ problems.p5 = function() {
 	return factors.toNum();
 }
 solutions.p5 = 232792560;
+
+problems.p6 = function() {
+	var s1 = 0;
+	for(var i = 1; i <= 100; i++) {
+		s1 += i*i;
+	}
+	var s2 = Math.pow(101*50, 2);
+	return s2 - s1;
+}
+solutions.p6 = 25164150;
+

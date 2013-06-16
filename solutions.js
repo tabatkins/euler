@@ -36,3 +36,11 @@ problems.p4 = function() {
 }
 solutions.p4 = 906609;
 
+problems.p5 = function() {
+	var factors = new Factors();
+	for(var i = 2; i <= 20; i++) {
+		factors.max(new Factors(i));
+	}
+	return factors.toNum();
+}
+solutions.p5 = 232792560;

@@ -148,3 +148,18 @@ problems.p13 = function() {
 }
 solutions.p13 = "5537376230";
 
+problems.p14 = function() {
+	var collatzLength = memoize(function (num) {
+		if(num == 1) return 1;
+		var next = num%2==0 ? num/2 : 3*num+1;
+		return collatzLength(next)+1;
+	});
+	for(var i = 1; i < 1e6; i++)
+		collatzLength(i);
+	return collatzLength.memo.reduce(function(x,v,k) {
+		if(v > x[0])
+			return [v,k];
+		return x;
+	}, [0, undefined])[1];
+}
+solutions.p14 = 837799;

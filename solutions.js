@@ -132,3 +132,12 @@ problems.p11 = function() {
 }
 solutions.p11 = 70600674;
 
+problems.p12 = function() {
+	var n = 0;
+	for(var i = 1;;i++) {
+		n += i;
+		if(new Factors(n).countDivisors() > 500) return n;
+	}
+}
+solutions.p12 = 76576500;
+

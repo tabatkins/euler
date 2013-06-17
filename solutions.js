@@ -163,3 +163,26 @@ problems.p14 = function() {
 	}, [0, undefined])[1];
 }
 solutions.p14 = 837799;
+
+problems.p15 = function() {
+	// Basic combinatorics problem.
+	// All routes contain 20 R moves and 20 D moves,
+	// so naive solution is just 40P40, or 40!.
+	// However, all Rs/Ds are indistinguishable,
+	// so need to divide answer by 20P20, or 20!, twice.
+	// Canceling needs to be done carefully to maintain precision:
+	// First 20! wipes out the bottom half of the 40!.
+	// Top half of the second 20! reduces the even remainders of the 40! all to 2,
+	// So we're left with the odd member of the top half of 40!,
+	// times 2^(number of even members in the top half),
+	// divided by the bottom half of 20!.
+	var accum = 1;
+	for(var i = 1; i <= 10; i++) {
+		accum /= i;
+		accum *= 2;
+		accum *= i*2+20-1;
+	}
+	return accum;
+}
+solutions.p15 = 137846528820;
+
